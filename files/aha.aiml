@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	
+<!-- Pattern matching for greetings -->
+<category>
+  <pattern>HELLO</pattern>
+  <template>Hi there! How can I assist you today?</template>
+</category>
+
+<category>
+  <pattern>WHAT CAN YOU DO</pattern>
+  <template>I can provide information about various topics. Just ask me anything!</template>
+</category>
+
+<!-- Pattern matching for getting user's name -->
+<category>
+  <pattern>MY NAME IS *</pattern>
+  <template>
+    <set name="name"><star/></set>
+    Nice to meet you, <get name="name"/>! How can I assist you today?
+  </template>
+</category>
+
+<!-- Pattern matching for basic conversation -->
+<category>
+  <pattern>WHAT IS YOUR NAME</pattern>
+  <template>My name is ChatBot. How can I help you?</template>
+</category>
+
+<category>
+  <pattern>TELL ME ABOUT *</pattern>
+  <template>
+    <set name="topic"><star/></set>
+    <condition>
+      <li value="ARTIFICIAL INTELLIGENCE">
+        Artificial Intelligence is a field of computer science that focuses on creating intelligent machines that can perform tasks that typically require human intelligence.
+      </li>
+      <li value="SPACE EXPLORATION">
+        Space exploration is the discovery and exploration of celestial structures in outer space by means of evolving and growing space technology.
+      </li>
+      <li value="ROBOTICS">
+        Robotics is the interdisciplinary field of science and engineering that focuses on designing, building, and programming robots.
+      </li>
+      <li value="CLIMATE CHANGE">
+        Climate change refers to long-term changes in temperature, precipitation, wind patterns, and other aspects of the Earth's climate system.
+      </li>
+      <li>
+        I'm sorry, but I don't have information about that topic.
+      </li>
+    </condition>
+  </template>
+</category>
+
+<!-- Pattern matching for small talk -->
+<category>
+  <pattern>HOW ARE YOU</pattern>
+  <template>I'm just a computer program, so I don't have feelings, but I'm here to help you!</template>
+</category>
+
+<category>
+  <pattern>GOODBYE</pattern>
+  <template>Goodbye! Have a great day!</template>
+</category>
+
+<category>
+  <pattern>*</pattern>
+  <template>I'm sorry, but I don't understand. Can you please rephrase or ask a different question?</template>
+</category>
+
+	
+	
+	
+</aiml>
